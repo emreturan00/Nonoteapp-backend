@@ -1,5 +1,5 @@
 # NoNoteApp
-*A note taking web application built using java-spring + ractJS + mysql, that is capible of CRUD operations on posted notes.*
+*A note taking web application built using java-spring -REST api- + ractJS + mysql, that is capible of CRUD operations on posted notes.*
 
 
 ![image](https://github.com/emreturan00/nonoteapp/assets/93795815/0694946c-c386-486e-bb36-016ff0fc4a48)
