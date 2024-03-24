@@ -8,6 +8,7 @@ import org.selfproject.nonoteapp.model.noteEntity;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api/notes")
 public class noteController {
