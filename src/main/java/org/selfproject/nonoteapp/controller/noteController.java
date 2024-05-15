@@ -1,5 +1,6 @@
 package org.selfproject.nonoteapp.controller;
 
+
 import org.apache.kafka.common.errors.ResourceNotFoundException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,16 +16,18 @@ public class noteController {
 
     private final noteRepository noteRepository;
 
-    public noteController(noteRepository noteRepo){
+    public noteController(noteRepository noteRepo) {
         this.noteRepository = noteRepo;
     }
 
     @PostMapping
-    public noteEntity createNote(@RequestBody noteEntity noteEntity){
+    public noteEntity createNote(@RequestBody noteEntity noteEntity) {
         return noteRepository.save(noteEntity);
     }
+
+
     @GetMapping
-    public List<noteEntity> getAllNotes(){
+    public List<noteEntity> getAllNotes() {
         return noteRepository.findAll();
     }
 
@@ -41,9 +44,9 @@ public class noteController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteNote(@PathVariable String id){
+    public ResponseEntity<?> deleteNote(@PathVariable String id) {
         noteEntity noteEntity = noteRepository.findById(id).
-                orElseThrow(() ->new ResourceNotFoundException("Note","id"));
+                orElseThrow(() -> new ResourceNotFoundException("Note", "id"));
         noteRepository.delete(noteEntity);
 
         return ResponseEntity.ok().build();
@@ -52,3 +55,4 @@ public class noteController {
 
 
 }
+
